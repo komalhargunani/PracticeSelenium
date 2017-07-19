@@ -54,7 +54,7 @@ public class MouseHoverTest {
 	public void closeBrowser(){
 	
 	
-		//CommonUtility.tearDown();
+		CommonUtility.tearDown();
 	}
 
 
