@@ -20,7 +20,7 @@ public class SyncIssuesTest {
 	@BeforeMethod()
 	public void setup(){
 		
-     driver=CommonUtility.setupFirefoxBrowser();
+     
     	
 	}
 	
@@ -30,13 +30,7 @@ public class SyncIssuesTest {
 		
 
 		
-		prop=CommonUtility.readPropertyFile();	
-		driver.get(prop.getProperty("SyncIssueURL"));
-		
-		Alert confirmationAlert = driver.switchTo().alert();
-		String alertText = confirmationAlert.getText();
-		System.out.println("Alert text is " + alertText);
-		confirmationAlert.dismiss();
+	
 		 
 		CommonUtility.isElementPresnt(driver,".//*[@id='txtSource']", 20).sendKeys("Bangalore");
 		 
