@@ -5,10 +5,8 @@ public class Constants {
 
 	 
 	      public static String URL = "https://hrms.synerzip.in/";
-	      
 	      public static String URL1 = "https://gmail.com";
-	      
-	      
+	      public static String datadrivenexcel = "E:\\synerzip_workspace\\synerzip\\hrms\\datadriven";
 	      public static String usernameuploadfile = "komal.hargunani@synerzip.com";
 	      public static String passworduploadfile = "waheguru@1234";
 	      public static String autoitfile = "E:\\AutoIT_script\\gmail_upload.exe";
