@@ -5,6 +5,7 @@ public class Constants {
 
 	 
 	      public static String URL = "https://hrms.synerzip.in/";
+	      
 	      public static String URL1 = "https://gmail.com";
 	      public static String datadrivenexcel = "E:\\synerzip_workspace\\synerzip\\hrms\\datadriven";
 	      public static String usernameuploadfile = "komal.hargunani@synerzip.com";
