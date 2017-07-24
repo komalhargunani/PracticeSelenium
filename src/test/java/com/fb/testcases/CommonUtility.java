@@ -7,8 +7,11 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +19,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Reporter;
+
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.FirefoxDriverManager;
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
@@ -24,7 +28,26 @@ public class CommonUtility {
 	 public static WebDriver driver = null;
 	 public static Properties prop;
 	 
-	
+	public static String captureScreenShot(String screenshotname){
+		try{
+			TakesScreenshot ts =(TakesScreenshot) driver;
+			File source = ts.getScreenshotAs(OutputType.FILE);
+		   String screenshotdest= "E:\\TestNGAdvancedReport\\report\\"+screenshotname+".png";
+			File destination = new File(screenshotdest);
+			FileUtils.copyFile(source, destination);
+			return screenshotdest;
+			
+		}catch(Exception e){
+			
+			return e.getMessage();
+			
+		}
+		
+		
+		
+		
+		
+	}
 	
     public static Properties readPropertyFile(){
     	File file = new File("E:\\synerzip_workspace\\synerzip\\hrms\\testdata.properties");
