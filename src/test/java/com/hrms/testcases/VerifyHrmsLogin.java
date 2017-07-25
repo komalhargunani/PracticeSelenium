@@ -42,30 +42,20 @@ public class VerifyHrmsLogin {
 		
 		
 		if(browser.equalsIgnoreCase("chrome")) {
-			
-			//System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 			ChromeDriverManager.getInstance().setup();
-			
 			  driver = new ChromeDriver();
 			  driver.get(Constants.URL); 
 			  driver.manage().window().maximize();
 			  driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		}else if(browser.equalsIgnoreCase("ie")){
-			 // System.setProperty("webdriver.ie.driver", "IEDriverServer.exe");
 			  InternetExplorerDriverManager.getInstance().setup();
-			  //DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-			 // capabilities.setCapability("requireWindowFocus", true);
-			//  capabilities.setCapability(InternetExplorerDriver.NATIVE_EVENTS, false);
-			 // driver = new InternetExplorerDriver(capabilities);
 			  driver = new InternetExplorerDriver();
 			  driver.get(Constants.URL); 
 			  driver.manage().window().maximize();
 			  driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			  driver.manage().window().setSize(new Dimension(1024,768));
 		}else if(browser.equalsIgnoreCase("firefox")){
-			// System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
 			FirefoxDriverManager.getInstance().setup();
-			 
 			 DesiredCapabilities capabilities=DesiredCapabilities.firefox();
 				capabilities.setCapability("marionette", true);
 				driver = new FirefoxDriver(capabilities);
@@ -92,16 +82,13 @@ public class VerifyHrmsLogin {
 		 
 		   XSSFWorkbook wb=new XSSFWorkbook(fis);
 		  
-		      XSSFSheet sh1= wb.getSheetAt(0);
+		    XSSFSheet sh1= wb.getSheetAt(0);
 	 
-		      String username =sh1.getRow(1).getCell(0).getStringCellValue();
-			  String password=sh1.getRow(1).getCell(1).getStringCellValue();
-	 
-	LoginPage login=new LoginPage(driver);
-	 
-	 
-	 
-	login.loginTohrms(username,password);
+		    String username =sh1.getRow(1).getCell(0).getStringCellValue();
+			String password=sh1.getRow(1).getCell(1).getStringCellValue();
+	
+	       LoginPage login=new LoginPage(driver);
+	       login.loginTohrms(username,password);
 	 
 	 
 	

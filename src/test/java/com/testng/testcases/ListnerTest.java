@@ -25,7 +25,7 @@ public class ListnerTest {
 		
 	}
 	
-	@Test(enabled=false)
+	@Test
 	public void verifyTitle()
 	
 	{
@@ -47,7 +47,7 @@ public class ListnerTest {
 	public void failedtestcase(){
 		
 		System.out.println("Testing failed test case");
-		Assert.assertTrue(false);
+		Assert.assertTrue(true);
 	}
 	
 	@AfterMethod
